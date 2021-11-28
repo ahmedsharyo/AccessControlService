@@ -1,0 +1,17 @@
+syntax = "proto3";
+package pb;
+option go_package = "/pb";
+
+service Alerting {
+    rpc Alert (AlertRequest) returns (AlertResponse) {}
+  }
+
+
+  message AlertRequest {
+    string cameraId = 1;
+  }
+  
+  message AlertResponse {
+    bool alerted = 1;
+  }
+  
