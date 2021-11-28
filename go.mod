@@ -1,4 +1,4 @@
-module github.com/ahmedsharyo/AlertService
+module github.com/ahmedsharyo/AccessControlService
 
 go 1.14
 

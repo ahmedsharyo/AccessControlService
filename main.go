@@ -3,15 +3,15 @@ package main
 import (
 	"fmt"
 
-	Config "github.com/ahmedsharyo/AlertService/config"
-	Models "github.com/ahmedsharyo/AlertService/models"
+	Config "github.com/ahmedsharyo/AccessControlService/config"
+	Models "github.com/ahmedsharyo/AccessControlService/models"
 	"github.com/gin-gonic/gin"
 
 	//"github.com/ahmedsharyo/AlertService/Routes"
 
 	"github.com/jinzhu/gorm"
 
-	"github.com/ahmedsharyo/AlertService/grpc_service"
+	"github.com/ahmedsharyo/AccessControlService/grpc_service"
 )
 
 var err error
@@ -26,7 +26,7 @@ func main() {
 
 	defer Config.DB.Close()
 
-	Config.DB.AutoMigrate(&Models.Alert{})
+	Config.DB.AutoMigrate(&Models.SecurityMangerCameras{})
 	server := gin.New()
 
 	//Routes.Setup(app)

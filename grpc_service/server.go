@@ -4,7 +4,7 @@ import (
 	"log"
 	"net"
 
-	"github.com/ahmedsharyo/AlertService/grpc_service/pb"
+	"github.com/ahmedsharyo/AccessControlService/grpc_service/pb"
 
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"

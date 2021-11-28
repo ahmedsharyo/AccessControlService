@@ -1,7 +1,7 @@
 package grpc_service
 
 import (
-	"github.com/ahmedsharyo/AlertService/grpc_service/pb"
+	"github.com/ahmedsharyo/AccessControlService/grpc_service/pb"
 
 	"log"
 	"testing"
