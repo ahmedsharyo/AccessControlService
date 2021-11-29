@@ -1,6 +1,6 @@
 syntax = "proto3";
-package pb;
-option go_package = "/pb";
+package pb1;
+option go_package = "/pb1";
 
 service SecutityMangers {
     rpc GetSecutityMangers(SecutityMangersRequest) returns (SecutityMangersResponse) {}

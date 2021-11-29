@@ -4,7 +4,7 @@ import (
 	"log"
 	"net"
 
-	"github.com/ahmedsharyo/AccessControlService/grpc_service/pb"
+	"github.com/ahmedsharyo/AccessControlService/grpc_service/pb1"
 
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
@@ -16,7 +16,7 @@ func Run() {
 
 	var server Server
 
-	pb.RegisterSecutityMangersServer(grpcServer, server)
+	pb1.RegisterSecutityMangersServer(grpcServer, server)
 
 	listen, err := net.Listen("tcp", "localhost:3000")
 
@@ -33,9 +33,9 @@ type Server struct{}
 
 // alert function responsible to get the Alert information
 //generated code is camel case so
-func (Server) GetSecutityMangers(ctx context.Context, request *pb.SecutityMangersRequest) (*pb.SecutityMangersResponse, error) {
+func (Server) GetSecutityMangers(ctx context.Context, request *pb1.SecutityMangersRequest) (*pb1.SecutityMangersResponse, error) {
 
-	var data pb.SecutityMangersResponse
+	var data pb1.SecutityMangersResponse
 	data.SecutityMangersIds = append(data.SecutityMangersIds, []int32{2, 3}...)
 	return &data, nil
 }

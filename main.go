@@ -32,7 +32,7 @@ func main() {
 	//Routes.Setup(app)
 	go grpc_service.Run()
 
-	port := "8080"
+	port := "8081"
 	server.Run(":" + port)
 
 }
