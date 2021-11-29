@@ -36,7 +36,6 @@ type Server struct{}
 func (Server) GetSecutityMangers(ctx context.Context, request *pb.SecutityMangersRequest) (*pb.SecutityMangersResponse, error) {
 
 	var data pb.SecutityMangersResponse
-
-	data.SecutityMangersIds = append(data.SecutityMangersIds, []int32{1}...)
+	data.SecutityMangersIds = append(data.SecutityMangersIds, []int32{2, 3}...)
 	return &data, nil
 }

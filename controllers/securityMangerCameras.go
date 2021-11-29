@@ -1,18 +1,32 @@
 package controllers
 
-import "os"
+import (
+	"os"
 
-// import (
-// 	"os"
-// 	//"strconv"
-// 	"time"
+	"github.com/ahmedsharyo/AccessControlService/models"
+)
 
-// 	//"github.com/ahmedsharyo/AlertService/Models"
-// 	//"github.com/gofiber/fiber/v2"
-// 	//"golang.org/x/crypto/bcrypt"
-// )
+//"
+//"github.com/gofiber/fiber/v2"
+//"golang.org/x/crypto/bcrypt"
 
 var SecretKey = os.Getenv("SecretKey")
+
+func Get_secutity_mangers_ids(camera_id string) /*[]int32 */ {
+
+	//var secutity_mangers_ids = []int32{}
+	securityMangerCameras := models.SecurityMangerCameras{CameraId: "3"}
+
+	models.UpdateSecurityMangerCameras(&securityMangerCameras, 2)
+
+	// for _, securityMangerCamera := range securityMangerCameras {
+
+	// 	intVar, _ := strconv.Atoi(securityMangerCamera.CameraId)
+	// 	secutity_mangers_ids = append(secutity_mangers_ids, []int32{int32(intVar)}...)
+	// }
+	// return secutity_mangers_ids
+
+}
 
 // func CreateAlert(c *fiber.Ctx) error {
 

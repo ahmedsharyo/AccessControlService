@@ -23,16 +23,26 @@ func CreateSecurityMangerCameras(SecurityMangerCameras *SecurityMangerCameras) (
 	return nil
 }
 
-//GetSecurityMangerCamerasByID ... Fetch only one SecurityMangerCameras by Id
-func GetSecurityMangerCamerasByEmail(SecurityMangerCameras *SecurityMangerCameras, email string) (err error) {
-	if err = Config.DB.Where("email = ?", email).First(SecurityMangerCameras).Error; err != nil {
+//GetSecurityMangerCamerasByID ... Fetch all SecurityMangerCameras by cameraId
+func GetSecurityMangerCamerasByCameraId(securityMangerCameras *SecurityMangerCameras, camera_id string) (err error) {
+	print("--------------+-++---------------")
+	print(securityMangerCameras)
+	print("-----------------------------")
+	if err = Config.DB.Find(securityMangerCameras).Error; err != nil {
+
+		print("--------------++++---------------")
+		print(err)
+		print("-----------------------------")
 		return err
 	}
+	print("-----------------***------------")
+	print(camera_id)
+	print("-----------------------------")
 	return nil
 }
 
 //UpdateSecurityMangerCameras ... Update SecurityMangerCameras
-func UpdateSecurityMangerCameras(SecurityMangerCameras *SecurityMangerCameras, id string) (err error) {
+func UpdateSecurityMangerCameras(SecurityMangerCameras *SecurityMangerCameras, id uint) (err error) {
 	fmt.Println(SecurityMangerCameras)
 	Config.DB.Save(SecurityMangerCameras)
 	return nil
