@@ -1,0 +1,17 @@
+syntax = "proto3";
+package pb;
+option go_package = "/pb";
+
+service SecutityMangers {
+    rpc GetSecutityMangers(SecutityMangersRequest) returns (SecutityMangersResponse) {}
+  }
+
+
+  message SecutityMangersRequest {
+    string cameraId = 1;
+  }
+  
+  message SecutityMangersResponse {
+    repeated int32 secutityMangersIds = 1;
+  }
+  
