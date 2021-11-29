@@ -16,7 +16,7 @@ func Run() {
 
 	var server Server
 
-	pb.RegisterAlertingServer(grpcServer, server)
+	pb.RegisterSecutityMangersServer(grpcServer, server)
 
 	listen, err := net.Listen("tcp", "localhost:3000")
 
@@ -32,9 +32,11 @@ func Run() {
 type Server struct{}
 
 // alert function responsible to get the Alert information
-func (Server) Alert(ctx context.Context, request *pb.AlertRequest) (*pb.AlertResponse, error) {
+//generated code is camel case so
+func (Server) GetSecutityMangers(ctx context.Context, request *pb.SecutityMangersRequest) (*pb.SecutityMangersResponse, error) {
 
-	var data pb.AlertResponse
-	data.Alerted = true
+	var data pb.SecutityMangersResponse
+
+	data.SecutityMangersIds = append(data.SecutityMangersIds, []int32{1}...)
 	return &data, nil
 }

@@ -12,14 +12,12 @@ import (
 func TestCountry(t *testing.T) {
 	log.Println("hey")
 	ctx := context.Background()
-	request := pb.AlertRequest{CameraId: "1"}
+	request := pb.SecutityMangersRequest{CameraId: "1"}
 	server := Server{}
-	response, err := server.Alert(ctx, &request)
+	response, err := server.GetSecutityMangers(ctx, &request)
 	if err != nil {
 		t.Error(err)
 	}
-	if response.Alerted != true {
-		t.Error("not alerted")
-	}
+
 	log.Println(response)
 }
